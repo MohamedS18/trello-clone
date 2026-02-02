@@ -3,6 +3,14 @@
 @use "./components/List/List.module.scss";
 @use "./components/BoardHeader/BoardHeader.module.scss";
 @use "./components/Board/Board.module.scss";
+@use "./components/Card/Card.module.scss";
+@use "./components/AddList/AddList.module.scss";
+@use "./components/DeleteCard/DeleteCard.module.scss";
+@use "./components/DeleteList/DeleteList.module.scss";
+@use "./components/AppLayout/AppLayout.module.scss";
+
+
+
 
 :root {
   font-family:
@@ -21,5 +29,5 @@ body {
 }
 
 ::placeholder {
-    color: rgb(225, 225, 225);
+  color: rgb(225, 225, 225);
 }

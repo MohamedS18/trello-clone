@@ -1,12 +1,15 @@
+import { DataProvider } from "../../context/dataContext";
 import { Header } from "../Header";
 import { Main } from "../Main";
-import "./AppLayout.module.scss"
+import "./AppLayout.module.scss";
 
 export function AppLayout() {
   return (
     <>
-      <Header />
-      <Main />
+      <DataProvider>
+        <Header />
+        <Main />
+      </DataProvider>
     </>
   );
 }

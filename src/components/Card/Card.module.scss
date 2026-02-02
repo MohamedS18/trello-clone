@@ -1,0 +1,32 @@
+.card {
+  min-height: 2.5rem;
+  position: relative;
+  background-color: white;
+  margin: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .cardMark {
+      display: block;
+      padding: 0.5rem;
+    }
+    border: 0.05rem black solid;
+    cursor: pointer;
+  }
+
+  &Mark {
+    display: none;
+    transition: display 0.3s;
+  }
+
+  &Marked {
+    padding: 0.5rem;
+  }
+
+  &Task {
+    padding: 0rem 0.2rem;
+  }
+}
+

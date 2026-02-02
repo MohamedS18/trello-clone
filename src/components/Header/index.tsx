@@ -13,21 +13,49 @@ export function Header() {
         {/* {
           imageArray.map((img) => <img src={img} width={50}></img>)
         } */}
-        <img  src={headerMoreIcon} width={30} />
-        <img  src={headerLogoIcon} width={65} />
+        <div className="header__left--item">
+          <img className="header-button-hover" src={headerMoreIcon} width={30} /> 
+        </div>
+        <div className="header__left--item">
+          <img className="header-button-hover" src={headerLogoIcon} width={65} />
+        </div>
       </div>
       <div className="header__middle">
         <div className="header__middle--search">
-          <img src={headerSearchIcon} className="header__middle--searchimage" width={15} />
+          <img
+            src={headerSearchIcon}
+            className="header__middle--searchimage"
+            width={15}
+          />
           <input className="header__middle--input" placeholder="Search" />
         </div>
         <button className="header__middle--button">Create 🎉</button>
       </div>
       <div className="header__right">
-        <img className="header__right--items" src={headerNotificationIcon} width={25} />
-        <img className="header__right--items" src={headerThoughtsIcon} width={20} />
-        <img className="header__right--items" src={headerMoreIcon} width={30} />
-        <span className="header__right--profile ">MS</span>
+        <div className="header__right--item">
+          <img
+            className="header-button-hover"
+            src={headerNotificationIcon}
+            width={25}
+          />
+        </div>
+        <div className="header__right--item">
+          <img
+            className="header-button-hover"
+            src={headerThoughtsIcon}
+            width={22}
+          />
+        </div>
+        <div className="header__right--item">
+          <img
+            className="header-button-hover"
+            src={headerMoreIcon}
+            width={25}
+          />
+        </div>
+        <div className="header__right--item">
+          <span className="header__right--profile ">MS</span>
+        </div>
       </div>
     </header>
   );

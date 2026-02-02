@@ -8,7 +8,6 @@ import boardheaderPowerUpsIcon from "../../assets/boardheader-powerups-icon.svg"
 import boardheaderStarIcon from "../../assets/boardheader-star-icon.svg";
 import boardheaderMoreIcon from "../../assets/boardheader-more-icon.svg";
 
-
 export function BoardHeader() {
   return (
     <header className="boardheader">
@@ -16,37 +15,47 @@ export function BoardHeader() {
         <h1 className="boardheader--title">My Trello Board</h1>
         <div className="boardheader__left--views">
           <img src={boardheaderViewsIcon} />
-          <img src={boardheaderDropdownIcon} width={15}/>
+          <img src={boardheaderDropdownIcon} width={15} />
         </div>
       </div>
       <div className="boardheader__right">
         <span className="header__right--profile ">MS</span>
-        <img
-          className="header__right--items"
-          src={boardheaderPowerUpsIcon}
-          width={20}
-        />
-        <img
-          className="header__right--items"
-          src={boardheaderAutomationIcon}
-          width={20}
-        />
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderPowerUpsIcon}
+            width={20}
+          />
+        </div>
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderAutomationIcon}
+            width={20}
+          />
+        </div>
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderFilterIcon}
+            width={20}
+          />
+        </div>
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderStarIcon}
+            width={20}
+          />
+        </div>
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderVisibilityIcon}
+            width={20}
+          />
+        </div>
 
-        <img
-          className="header__right--items"
-          src={boardheaderFilterIcon}
-          width={20}
-        />
-        <img
-          className="header__right--items"
-          src={boardheaderStarIcon}
-          width={20}
-        />
-        <img
-          className="header__right--items"
-          src={boardheaderVisibilityIcon}
-          width={20}
-        />
         <button className="boardheader__right--share">
           <img
             className="boardheader__right--shareimage"
@@ -55,11 +64,13 @@ export function BoardHeader() {
           />
           Share
         </button>
-        <img
-          className="header__right--items"
-          src={boardheaderMoreIcon}
-          width={20}
-        />
+        <div className="header__right--items">
+          <img
+            className="header-button-hover"
+            src={boardheaderMoreIcon}
+            width={20}
+          />
+        </div>
       </div>
     </header>
   );

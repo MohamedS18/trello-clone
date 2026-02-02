@@ -1,3 +1,5 @@
+@use "../../styles/mixins.scss" as *;
+
 .header {
   background-color: rgb(71, 54, 153);
   height: 3rem;
@@ -10,39 +12,44 @@
     justify-content: space-around;
     width: 7rem;
     align-items: center;
+
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__middle {
     display: flex;
     padding: 0.4rem 0rem;
 
-
     &--search {
-        display: flex;
-        background-color: rgba(255, 255, 255, 0.4);
-        border-radius: 0.3rem;
-        display: flex;
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 0.3rem;
+      display: flex;
     }
 
     &--searchimage {
-        padding: 0rem 0.5rem;
+      padding: 0rem 0.5rem;
     }
 
     &--input {
-        background-color:  rgba(0, 0, 0, 0);
-        color: white;
-        border: none;
-        opacity: 1;
-        width: 50rem;
+      background-color: rgba(0, 0, 0, 0);
+      color: white;
+      border: none;
+      opacity: 1;
+      width: 50rem;
     }
 
     &--button {
-        color: white;
-        font-size: 1rem;
-        margin: 0rem 0.5rem;
-        background-color: rgba(255, 255, 255, 0.4);
-        border: none;
-        border-radius: 0.3rem;
+      color: white;
+      font-size: 1rem;
+      margin: 0rem 0.5rem;
+      background-color: rgba(255, 255, 255, 0.4);
+      border: none;
+      border-radius: 0.3rem;
     }
   }
 
@@ -51,22 +58,28 @@
     align-items: center;
     justify-content: space-around;
 
-    &--items {
-        padding: 0rem 0.5rem;
+    &--item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0rem 0.5rem;
     }
 
     &--profile {
-        background-color: green;
-        font-size: 0.8rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 1.5rem;
-        height: 1.5rem;
-        color: white;
-        border-radius: 1rem;
-        margin-right: 0.5rem;
+      background-color: green;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      color: white;
+      border-radius: 1rem;
+      margin-right: 0.5rem;
     }
   }
 }
 
+.header-button-hover:hover {
+  @include header-button-hover
+}
