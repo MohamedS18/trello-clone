@@ -1,0 +1,61 @@
+.list {
+  width: 18rem;
+  margin: 1rem;
+  background-color: wheat;
+  border-radius: 1rem;
+  min-width: 18rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    &--buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 3rem;
+    }
+
+    &--title {
+      font-weight: bold;
+    }
+  }
+
+  &__footer {
+    padding: 1rem;
+
+    &--label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--inputbuttons {
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &--addcard {
+      width: 7rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--addcardbutton {
+      background-color: rgb(106, 106, 255);
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0.2rem;
+      margin-right: 0.5rem;
+    }
+
+    &--input {
+      width: 100%;
+      height: 2rem;
+      border: none;
+      border-radius: 0.2rem;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.board {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overflow-y: hidden;
+}
