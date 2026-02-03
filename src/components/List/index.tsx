@@ -18,7 +18,7 @@ type Props = {
   setToggleActionListId: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-export function List({
+export const List = ({
   listName,
   listId,
   toShowAddCardInput,
@@ -28,11 +28,11 @@ export function List({
   setToggledTaskId,
   toToggleActionListId,
   setToggleActionListId,
-}: Props) {
-  function showActions(e: any) {
+}: Props) => {
+  const showActions = (e: any) => {
     e.stopPropagation();
     setToggleActionListId(listId);
-  }
+  };
 
   return (
     <>
@@ -46,7 +46,7 @@ export function List({
               src={listActionsIcon}
               width={20}
             />
-            {toToggleActionListId ? <DeleteList listId={listId}/> : <></>}
+            {toToggleActionListId ? <DeleteList listId={listId} /> : <></>}
           </div>
         </div>
         <div className="list__cards">
@@ -76,4 +76,4 @@ export function List({
       </div>
     </>
   );
-}
+};

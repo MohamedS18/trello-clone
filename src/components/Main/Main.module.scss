@@ -1,4 +1,6 @@
+@use "../../styles/variables.scss" as *;
+
 .main {
-    background-image: linear-gradient(135deg, rgb(71, 54, 153), rgb(227, 100, 227));
+    background-image: linear-gradient(135deg, $background-blue, $background-purple);
     height: 45rem;
 }

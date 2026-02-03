@@ -3,18 +3,22 @@ import { List } from "../List";
 import { DataContext } from "../../context/dataContext";
 import { AddList } from "../AddList";
 
-export function Board() {
+export const Board = () => {
   const dataContext = useContext(DataContext);
 
   if (!dataContext) {
     return;
   }
 
-  const { boardData, setBoardData } = dataContext;
+  const { boardData } = dataContext;
 
   const [toggledListId, setToggledListId] = useState<number | null>(null);
   const [toggledTaskId, setToggledTaskId] = useState<number | null>(null);
   const [toggleActionListId, setToggleActionListId] = useState<number | null>(null);
+
+  useEffect(() => {
+    localStorage.setItem("listData", JSON.stringify(boardData));
+  }, [boardData])
 
   useEffect(() => {
     document.body.addEventListener("click", () => {

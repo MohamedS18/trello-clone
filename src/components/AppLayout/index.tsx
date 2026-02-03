@@ -3,7 +3,7 @@ import { Header } from "../Header";
 import { Main } from "../Main";
 import "./AppLayout.module.scss";
 
-export function AppLayout() {
+export const AppLayout = () => {
   return (
     <>
       <DataProvider>

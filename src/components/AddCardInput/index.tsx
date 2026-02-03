@@ -2,13 +2,14 @@ import { useContext, useState } from "react";
 import listfooterCloseIcon from "../../assets/listfooter-inputclose-icon.svg";
 import { DataContext } from "../../context/dataContext";
 import type { taskType } from "../../data";
+import { ADD_CARD_INPUT } from "./constants";
 
 type Props = {
   listId: number;
   setToggledListId: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-export function AddCardInput({ listId, setToggledListId }: Props) {
+export const AddCardInput = ({ listId, setToggledListId }: Props) => {
   const dataContext = useContext(DataContext);
   const [taskText, setTaskText] = useState("");
 
@@ -18,7 +19,7 @@ export function AddCardInput({ listId, setToggledListId }: Props) {
 
   const { setBoardData } = dataContext;
 
-  function addCard() {
+  const addCard = () => {
     const newTask: taskType = {
       id: Date.now(),
       description: taskText,
@@ -48,7 +49,7 @@ export function AddCardInput({ listId, setToggledListId }: Props) {
       </div>
       <div className="list__footer--inputbuttons">
         <button className="list__footer--addcardbutton" onClick={addCard}>
-          Add Card
+          {ADD_CARD_INPUT.addCard}
         </button>
         <img onClick={() => setToggledListId(null)} src={listfooterCloseIcon} />
       </div>

@@ -1,16 +1,16 @@
 import listfooterCloseIcon from "../../assets/listfooter-inputclose-icon.svg";
 import listfooterAddCardIcon from "../../assets/listfooter-addcard-icon.svg";
-import listfooterTemplateIcon from "../../assets/listfooter-template-icon.svg";
 import { DataContext } from "../../context/dataContext";
 import { useState, useContext } from "react";
 import type { ListType } from "../../data";
+import { ADD_LIST } from "./constants";
 
 type Props = {
   toShowAddCardInput: boolean;
   setToggledListId: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-export function AddList({ toShowAddCardInput, setToggledListId }: Props) {
+export const AddList = ({ toShowAddCardInput, setToggledListId }: Props) => {
   const [listName, setListName] = useState("");
 
   const dataContext = useContext(DataContext);
@@ -29,6 +29,7 @@ export function AddList({ toShowAddCardInput, setToggledListId }: Props) {
     };
     setBoardData((prev) => [...prev, newList]);
     setToggledListId(null);
+    setListName("");
   }
 
   return (
@@ -45,7 +46,7 @@ export function AddList({ toShowAddCardInput, setToggledListId }: Props) {
           </div>
           <div className="list__footer--inputbuttons">
             <button className="list__footer--addcardbutton" onClick={addList}>
-              Add List
+              {ADD_LIST.addList}
             </button>
             <img
               onClick={() => setToggledListId(null)}
@@ -62,7 +63,7 @@ export function AddList({ toShowAddCardInput, setToggledListId }: Props) {
             }}
           >
             <img src={listfooterAddCardIcon} />
-            Add a List
+            {ADD_LIST.addAnotherList}
           </div>
         </div>
       )}

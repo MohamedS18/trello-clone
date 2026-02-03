@@ -10,7 +10,7 @@ type Props = { children: ReactNode };
 
 export const DataContext = createContext<DataContextType | null>(null);
 
-export function DataProvider({ children }: Props) {
+export const DataProvider = ({ children }: Props) => {
   const [boardData, setBoardData] = useState(() => getData());
 
   return (

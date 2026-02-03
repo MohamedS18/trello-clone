@@ -1,68 +1,32 @@
-import boardheaderDropdownIcon from "../../assets/boardheader-dropdown-icon.svg";
-import boardheaderViewsIcon from "../../assets/boardheader-views-icon.svg";
-import boardheaderVisibilityIcon from "../../assets/boardheader-visibility-icon.svg";
 import boardheaderShareIcon from "../../assets/boardheader-share-icon.svg";
-import boardheaderAutomationIcon from "../../assets/boardheader-automation-icon.svg";
-import boardheaderFilterIcon from "../../assets/boardheader-filter-icon.svg";
-import boardheaderPowerUpsIcon from "../../assets/boardheader-powerups-icon.svg";
-import boardheaderStarIcon from "../../assets/boardheader-star-icon.svg";
 import boardheaderMoreIcon from "../../assets/boardheader-more-icon.svg";
+import { BOARD_HEADER, BOARD_HEADER_LEFT_ICONS, BOARD_HEADER_RIGHT_ICONS } from "./constants";
 
-export function BoardHeader() {
+export const BoardHeader = () => {
   return (
     <header className="boardheader">
       <div className="boardheader__left">
-        <h1 className="boardheader--title">My Trello Board</h1>
+        <h1 className="boardheader--title">{BOARD_HEADER.boardName}</h1>
         <div className="boardheader__left--views">
-          <img src={boardheaderViewsIcon} />
-          <img src={boardheaderDropdownIcon} width={15} />
+          {BOARD_HEADER_LEFT_ICONS.map((image, index) => (
+            <img src={image} width={20} key={index}/>
+          ))}
         </div>
       </div>
       <div className="boardheader__right">
-        <span className="header__right--profile ">MS</span>
-        <div className="header__right--items">
-          <img
-            className="header-button-hover"
-            src={boardheaderPowerUpsIcon}
-            width={20}
-          />
-        </div>
-        <div className="header__right--items">
-          <img
-            className="header-button-hover"
-            src={boardheaderAutomationIcon}
-            width={20}
-          />
-        </div>
-        <div className="header__right--items">
-          <img
-            className="header-button-hover"
-            src={boardheaderFilterIcon}
-            width={20}
-          />
-        </div>
-        <div className="header__right--items">
-          <img
-            className="header-button-hover"
-            src={boardheaderStarIcon}
-            width={20}
-          />
-        </div>
-        <div className="header__right--items">
-          <img
-            className="header-button-hover"
-            src={boardheaderVisibilityIcon}
-            width={20}
-          />
-        </div>
-
+        <span className="header__right--profile ">{BOARD_HEADER.profile}</span>
+        {BOARD_HEADER_RIGHT_ICONS.map((image, index) => (
+          <div className="header__right--items" key={index}>
+            <img className="header-button-hover" src={image} width={20} />
+          </div>
+        ))}
         <button className="boardheader__right--share">
           <img
             className="boardheader__right--shareimage"
             src={boardheaderShareIcon}
             width={20}
           />
-          Share
+          {BOARD_HEADER.share}
         </button>
         <div className="header__right--items">
           <img

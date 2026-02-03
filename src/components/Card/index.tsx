@@ -1,8 +1,9 @@
 import cardMarkIcon from "../../assets/card-mark-icon.svg";
 import cardGreenMarkIcon from "../../assets/card-greenmark-icon.svg";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../../context/dataContext";
 import { DeleteCard } from "../DeleteCard";
+import { boardDataLists, getData, type taskType } from "../../data";
 
 type Props = {
   taskId: number;
@@ -12,13 +13,13 @@ type Props = {
   setToggledTaskId: React.Dispatch<React.SetStateAction<number | null>>;
 };
 
-export function Card({
+export const Card = ({
   taskId,
   isCompleted,
   taskName,
   toShowDelete,
   setToggledTaskId,
-}: Props) {
+}: Props) => {
   const dataContext = useContext(DataContext);
 
   if (!dataContext) {
@@ -26,8 +27,9 @@ export function Card({
   }
 
   const { setBoardData } = dataContext;
+  const [taskLabel, setTaskLabel] = useState(taskName);
 
-  function addMark() {
+  const addMark = () => {
     setBoardData((prev) =>
       prev.map((list) => ({
         ...list,
@@ -36,9 +38,9 @@ export function Card({
         ),
       })),
     );
-  }
+  };
 
-  function removeMark() {
+  const removeMark = () => {
     setBoardData((prev) =>
       prev.map((list) => ({
         ...list,
@@ -49,9 +51,23 @@ export function Card({
     );
   }
 
-  function showDelete(e: any) {
+  const showDelete = (e: any) => {
     e.preventDefault();
     setToggledTaskId(taskId);
+  }
+
+  const editTaskName = (newTaskLabel: string) => {
+    setTaskLabel(newTaskLabel);
+    setBoardData((prev) =>
+      prev.map((list) => ({
+        ...list,
+        tasks: list.tasks.map((task) =>
+          task.id === taskId ? { ...task, description: taskLabel } : task,
+        ),
+      })),
+    );
+    console.log("task saved");
+    console.log(getData());
   }
 
   return (
@@ -66,9 +82,15 @@ export function Card({
             <img src={cardMarkIcon} width={20} />
           </div>
         )}
-        <div className="cardTask">{taskName}</div>
-        {toShowDelete ? <DeleteCard taskId={taskId} /> : <></>}
+        <input
+          className="cardTask"
+          value={taskLabel}
+          onChange={(e) => {
+            editTaskName(e.currentTarget.value);
+          }}
+        />
+        {toShowDelete ?? <DeleteCard taskId={taskId} />}
       </div>
     </>
   );
-}
+};

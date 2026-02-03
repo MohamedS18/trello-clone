@@ -1,12 +1,13 @@
 import archeiveIcon from "../../assets/archeive-icon.svg";
 import { useContext } from "react";
 import { DataContext } from "../../context/dataContext";
+import { DELETE_CARD } from "./constants";
 
 type Props = {
   taskId: number;
 };
 
-export function DeleteCard({ taskId }: Props) {
+export const DeleteCard = ({ taskId }: Props) => {
   const dataContext = useContext(DataContext);
 
   if (!dataContext) {
@@ -15,7 +16,7 @@ export function DeleteCard({ taskId }: Props) {
 
   const { setBoardData } = dataContext;
 
-  function deleteTask() {
+  const deleteTask = () => {
     setBoardData((prev) =>
       prev.map((list) => ({
         ...list,
@@ -28,7 +29,7 @@ export function DeleteCard({ taskId }: Props) {
     <div className="deleteCard">
       <button className="deleteCardButton" onClick={deleteTask}>
         <img className="deleteCardIcon" src={archeiveIcon} width={20}/>
-        Archeive
+        {DELETE_CARD.archive}
       </button>
     </div>
   );
