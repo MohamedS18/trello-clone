@@ -1,1 +1,3 @@
-made chnages in merger conflict nranch
+Hi, this is going to cause conflict. initaial 1.
+made conflict by adding this new line in github UI
+made new changes
