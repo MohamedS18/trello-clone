@@ -1,0 +1,20 @@
+.deleteCard {
+  position: absolute;
+  right: -7rem;
+  z-index: 1;
+  padding: 0.4rem;
+  background-color: rgb(182, 182, 182);
+  border-radius: 0.4rem;
+
+  &Button {
+    display: flex;
+    background-color: rgb(193, 193, 193);
+    align-items: center;
+    border: none;
+    justify-content: center;
+  }
+
+  &Icon {
+    padding: 0.1rem;
+  }
+}

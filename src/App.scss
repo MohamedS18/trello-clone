@@ -1,0 +1,33 @@
+@use "./components/Header/Header.module.scss";
+@use "./components/Main/Main.module.scss";
+@use "./components/List/List.module.scss";
+@use "./components/BoardHeader/BoardHeader.module.scss";
+@use "./components/Board/Board.module.scss";
+@use "./components/Card/Card.module.scss";
+@use "./components/AddList/AddList.module.scss";
+@use "./components/DeleteCard/DeleteCard.module.scss";
+@use "./components/DeleteList/DeleteList.module.scss";
+@use "./components/AppLayout/AppLayout.module.scss";
+
+
+
+
+:root {
+  font-family:
+    "Atlassian Sans",
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Ubuntu,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+::placeholder {
+  color: rgb(225, 225, 225);
+}

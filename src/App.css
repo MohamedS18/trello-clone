@@ -1,0 +1,88 @@
+.header {
+  background-color: rgb(71, 54, 153);
+  height: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header__left {
+  display: flex;
+  padding-left: 1rem;
+  justify-content: space-around;
+  width: 7rem;
+  align-items: center;
+}
+.header__middle {
+  display: flex;
+  padding: 0.4rem 0rem;
+}
+.header__middle--search {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.3rem;
+  display: flex;
+}
+.header__middle--searchimage {
+  padding: 0rem 0.5rem;
+}
+.header__middle--input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  opacity: 1;
+  width: 50rem;
+}
+.header__middle--button {
+  color: white;
+  font-size: 1rem;
+  margin: 0rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 0.3rem;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.header__right--items {
+  padding: 0rem 0.5rem;
+}
+.header__right--profile {
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+
+.main {
+  background-image: linear-gradient(blue, purple);
+}
+
+.boardheader {
+  display: flex;
+  justify-content: space-between;
+}
+.boardheader__left {
+  display: flex;
+}
+
+:root {
+  font-family: "Atlassian Sans", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+::-moz-placeholder {
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}/*# sourceMappingURL=App.css.map */

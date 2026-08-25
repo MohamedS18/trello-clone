@@ -1,0 +1,8 @@
+.board {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  overflow-y: hidden;
+}
